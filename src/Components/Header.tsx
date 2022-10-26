@@ -20,10 +20,6 @@ function Header() {
         </p>
         <button>Get Started</button>
       </div>
-      {/* <div className="-z-10 absolute w-full h-full bottom-[-30rem] scale-125">
-        <img src={desktopPattern} alt="" />
-      </div> */}
-      {/* bg-intro-mobile md:bg-intro-desktop bg-bottom bg-contain bg-no-repeat */}
     </main>
   );
 }

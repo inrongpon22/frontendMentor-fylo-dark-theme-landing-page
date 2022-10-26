@@ -5,17 +5,28 @@ import { render } from "react-dom";
 
 function EmailSignup() {
   const [email, setEmail] = useState('');
-  const [error, setError] = useState(true);
-  const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  const [error, setError] = useState(false);
+  // const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
+  const regEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
-  const validateEmail = (e:any) => {
-    setEmail(e.target.value)
-    if(regEx.test(email)=== false){
+  console.log(regEx.test(email))
+  const validateEmail = event => {
+    if(regEx.test(email) === true){
       setError(false)
     }else{
       setError(true)
     }
   }
+
+
+  // const validateEmail = (e:any) => {
+  //   setEmail(e.target.value)
+  //   if(regEx.test(email)=== false){
+  //     setError(false)
+  //   }else{
+  //     setError(true)
+  //   }
+  // }
 
 
   return (
@@ -35,6 +46,7 @@ function EmailSignup() {
               type="text"
               placeholder="email@example.com"
               className="my-5 w-full text-black"
+              onChange={(event) => setEmail(event.target.value)}
             />
             <button className="w-full lg:w-2/5 lg:ml-3"
             onClick={validateEmail}
@@ -42,7 +54,7 @@ function EmailSignup() {
               Get Started For Free
             </button>
           </div>
-            <p id="validateEmail" className={`text-[#FF4242] font-bold pl-10 ${error ? `invisible` : `visible`}`}>
+            <p id="validateEmail" className={`text-[#FF4242] font-bold pl-10 ${error ? `visible` : `invisible`}`}>
               Please enter a valid email address.
             </p>
         </div>

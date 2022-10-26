@@ -6,8 +6,8 @@ function QuoteSection() {
   return (
     <main className="relative lg:flex px-5 pb-1 pt-32 lg:py-5 lg:px-32 text-white bg-[#181F2A]">
       <img className="absolute w-8 lg:w-10 left-11 lg:left-36 lg:top-4 lg:z-0" src={quoteIcon} alt="" />
-      {userData.map((user) => (
-        <div className="lg:z-10 p-8 bg-[#202A3C] m-5 text-sm">
+      {userData.map((user, index) => (
+        <div key={index} className="lg:z-10 p-8 bg-[#202A3C] m-5 text-sm">
           <p key={user.quote} className="">
             {user.quote}
           </p>
