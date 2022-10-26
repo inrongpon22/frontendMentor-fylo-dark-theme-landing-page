@@ -4,7 +4,7 @@
 
 @layer base {
   button{
-    @apply bg-gradient-to-r from-[#65E2D9] to-[#339ECC] w-60 h-12 rounded-full font-semibold
+    @apply bg-gradient-to-r from-[#65E2D9] to-[#339ECC] w-60 h-12 rounded-full font-semibold hover:brightness-110
   }
   input{
     @apply bg-white w-60 h-12 rounded-full text-start pl-6
