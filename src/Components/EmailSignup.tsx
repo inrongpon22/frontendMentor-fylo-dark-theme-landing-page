@@ -1,19 +1,22 @@
 import React, { useState } from "react";
+import { render } from "react-dom";
+
+
 
 function EmailSignup() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [error, setError] = useState(true);
+  const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
 
-  const EmailValidation = (e) => {
-    const regEx = /^[^ ]+@[^ ]+\.[a-z]{2,3}/;
-    const emailValue = e.target.value;
-    setEmail(emailValue);
-    if(email.match(regEx)){
-      setError(true)
-    }else{
+  const validateEmail = (e:any) => {
+    setEmail(e.target.value)
+    if(regEx.test(email)=== false){
       setError(false)
+    }else{
+      setError(true)
     }
-  };
+  }
+
 
   return (
     <main className="text-white bg-[#181F2A] py-1 lg:flex lg:justify-center">
@@ -34,7 +37,7 @@ function EmailSignup() {
               className="my-5 w-full text-black"
             />
             <button className="w-full lg:w-2/5 lg:ml-3"
-            onClick={EmailValidation}
+            onClick={validateEmail}
             >
               Get Started For Free
             </button>

@@ -1,5 +1,5 @@
 import React from "react";
-import userData from "../Components/Data.json";
+import userData from "../Components/userData";
 import quoteIcon from "../assets/images/bg-quotes.png";
 
 function QuoteSection() {
