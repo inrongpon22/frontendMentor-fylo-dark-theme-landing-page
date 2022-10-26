@@ -6,11 +6,9 @@ import { render } from "react-dom";
 function EmailSignup() {
   const [email, setEmail] = useState('');
   const [error, setError] = useState(false);
-  // const regEx = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/g;
   const regEx = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
 
-  console.log(regEx.test(email))
-  const validateEmail = event => {
+  const validateEmail = (event:any) => {
     if(regEx.test(email) === true){
       setError(false)
     }else{
@@ -18,15 +16,6 @@ function EmailSignup() {
     }
   }
 
-
-  // const validateEmail = (e:any) => {
-  //   setEmail(e.target.value)
-  //   if(regEx.test(email)=== false){
-  //     setError(false)
-  //   }else{
-  //     setError(true)
-  //   }
-  // }
 
 
   return (
